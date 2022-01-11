@@ -10,10 +10,11 @@ const datosSchema = new Schema({
     nigrum:Boolean,
     direccion:String,
     localidad:String,
-    provincia:String
+    provincia:String,
+    repartidor:String
 },
 {
-    timestamps:true
+    timestamps:{createdAt:false, updatedAt:true}
 })
 
 const dbDatos = model('datosPaquetes', datosSchema)

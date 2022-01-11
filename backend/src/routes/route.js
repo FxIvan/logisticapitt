@@ -8,7 +8,7 @@ router.route('/')
     res.json(pedidoDatos)
 })
 .post(async(req,res)=>{ //armamos el POST que enviamos por axios
-    const {emision,codenv,telclient,correoargentino,andreani,pikit,nigrum,direccion,localidad,provincia} = req.body
+    const {emision,codenv,telclient,correoargentino,andreani,pikit,nigrum,direccion,localidad,provincia,repartidor} = req.body
 
     const newDatos = new datosEnvios({
         emision:emision,
@@ -20,7 +20,8 @@ router.route('/')
         nigrum:nigrum,
         direccion:direccion,
         localidad:localidad,
-        provincia:provincia
+        provincia:provincia,
+        repartidor:repartidor
     })
 
     await newDatos.save()
