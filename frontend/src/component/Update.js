@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 export const Update = () =>{
 
@@ -6,10 +7,10 @@ export const Update = () =>{
         emision:'',
         codenv:'',
         telclient:'',
-        correoargentino:'',
-        andreani:'',
-        pikit:'',
-        nigrum:'',
+        correoargentino:false,
+        andreani:false,
+        pikit:false,
+        nigrum:false,
         direccion:'',
         localidad:'',
         provincia:''
@@ -28,7 +29,7 @@ export const Update = () =>{
         })
     }
 
-    const enviarDato = () =>{
+    const enviarDato = async() =>{
 
         if(form.codenv.search('#')){
             if(form.codenv.indexOf('#') === 1){
@@ -41,6 +42,8 @@ export const Update = () =>{
             setLocalidad(true)
             return
         }
+
+        await axios.post('http://localhost:27017/datospaquetes', form)        
         console.log(form)
         window.location.href ='/update'
     }
