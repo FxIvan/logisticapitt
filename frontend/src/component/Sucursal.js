@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import './css/style.css'
 
 export const Sucursal = () => {
   const [listaPaquetes, setListaPaquetes] = useState([])
@@ -39,20 +41,23 @@ export const Sucursal = () => {
     
     }
 
-  
+    const handleDelete = async(id) =>{
+      await axios.delete('http://localhost:27017/datospaquetes/' + id)
+      window.location.href = '/sucursal'
+    }
+
 
   return (
-    <div className="container mx-3">
+    <div className="container">
       <div>
         <h2>Envios a la Espera</h2>
         <h3>Pedidos emitidor en la Fecha: 16/01/2021 </h3>
       </div>
-
-      <div className="mt-5">
+      <div className='mt-5'>
         {listaPaquetes.map((list) => (
-          <div key={list._id}>
-            <div className="mt-3">
-              <div className="col-12 row">
+          <div key={list._id} className='dato-mobile-sucursal'>
+            <div className="mt-3 m-auto">
+              <div className="col-12 row m-auto">
                 <div className="col-6">
                   <h4>Codigo de Envio</h4>
                   <span>{list.codenv}</span>
@@ -63,8 +68,8 @@ export const Sucursal = () => {
                 </div>
               </div>
 
-              <div className="col-12 row">
-                <div className="col-12 row">
+              
+                <div className="col-12 row m-auto">
                   <div className="col-6">
                     <h4>Hora</h4>
                     <span>{list.updatedAt.slice(11,-5)}</span>
@@ -74,7 +79,7 @@ export const Sucursal = () => {
                     <span>{GetTrue(list._id)}</span>
                   </div>
                 </div>
-              </div>
+  
 
               <div className='text-center'>
                 <div>
@@ -83,15 +88,16 @@ export const Sucursal = () => {
                 <div>
                     <span>{list.repartidor}</span>
                 </div>
+              
+              <div className='container d-flex justify-content-around mt-3 mb-3'>
+                <Link to={`/edit/${list._id}`} className='btn btn-success' >Actualizar</Link>
+                <button type='button' className='btn btn-danger'  onClick={()=>handleDelete(list._id)}>Eliminar</button>
               </div>
-              <div className='container d-flex justify-content-around'>
-                <button>Actualizar</button>
-                <button>Eliminar</button>
               </div>
             </div>
           </div>
         ))}
+        </div>
       </div>
-    </div>
   )
 }

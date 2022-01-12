@@ -28,4 +28,14 @@ router.route('/')
     res.json({message:'Datos Enviados correctamente'})
 })
 
+router.route('/:id')
+.get(async(req,res)=>{
+    const datosPedidos = await datosEnvios.findById(req.params.id)
+    res.json(datosPedidos)
+})
+.delete(async(req,res)=>{
+    await datosEnvios.findByIdAndDelete(req.params.id)
+    res.json({message:'Elemento Eliminado Correctamente'})
+})
+
 module.exports = router
