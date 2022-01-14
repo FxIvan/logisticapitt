@@ -12,5 +12,6 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/datospaquetes', require('./routes/route'))
+app.use('/repartidor' , require('./routes/repartidorRoutes'))
 
 module.exports = app

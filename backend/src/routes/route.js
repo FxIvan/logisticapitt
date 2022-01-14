@@ -37,5 +37,34 @@ router.route('/:id')
     await datosEnvios.findByIdAndDelete(req.params.id)
     res.json({message:'Elemento Eliminado Correctamente'})
 })
+.put(async(req,res)=>{
+    const {emision,
+        codenv,
+        telclient,
+        correoargentino,
+        andreani,
+        pikit,
+        nigrum,
+        direccion,
+        localidad,
+        provincia,
+        repartidor} = req.body
+    await datosEnvios.findByIdAndUpdate(req.params.id,{
+        emision,
+        codenv,
+        telclient,
+        correoargentino,
+        andreani,
+        pikit,
+        nigrum,
+        direccion,
+        localidad,
+        provincia,
+        repartidor
+    })
+
+    res.json({message:"Se ah actualizar correctamente"})
+})
+
 
 module.exports = router

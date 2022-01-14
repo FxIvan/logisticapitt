@@ -5,4 +5,20 @@
         border-radius: 0.6rem;
         background-color: bisque;
     }
+
+    .repartidor-codigo h3{
+        padding: 1rem;
+        border-radius: 0.8rem;
+        border: 2px solid black;
+        width: 30vh;
+        margin: auto;
+        background-color: orange;
+    }
+    .repartidor-vermas{
+        margin: auto;
+        border: 2px solid black;
+        padding: 1rem;
+        border-radius: 0.8rem;
+        background-color: #5f8d2b;
+    }
 }

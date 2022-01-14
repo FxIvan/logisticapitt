@@ -46,7 +46,7 @@ export const Update = () =>{
             return
         }
       
-        if(form.repartidor.length != 11){
+        if(form.repartidor.length != 10){
             setRepartidor(true)
             return
         }
@@ -102,8 +102,8 @@ export const Update = () =>{
             <div className='container'>
                 <label htmlfor="formControlInput" className="form-label">Repartidor a ASIGNAR</label>
                 <input type="text" className="form-control" id="formControlInput" placeholder="#D42727117C" name='repartidor' onChange={handleInput}/>
-                <p className='text-danger'>{repartidor ? "debe contener 10 Digitos":'obligatorio'}</p>
-                <p className='text-info'>Debe incluir la suigiente estructura <br/> #D-DNI-EMPRESA</p>
+                <p className='text-danger'>{repartidor ? "debe contener 9 Digitos":'obligatorio'}</p>
+                <p className='text-info'>Debe incluir la siguiente estructura <br/> D-DNI-EMPRESA</p>
             </div>
             <div className='container mb-4'>
                 <div className='text-center mb-5'>
