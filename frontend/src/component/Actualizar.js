@@ -53,7 +53,7 @@ export const Actualizar = () =>{
             <label htmlFor='formControlInput' className="form-label mt-3">Fecha de emision</label>
             <input type="date" className="form-control" id="formControlInput" placeholder="dd/mm/yy" onChange={handleInput} name='emision'/>
             <label htmlfor="formControlInput" className="form-label mt-3">Codigo de Envio</label>
-            <input type="text" className="form-control" id="formControlInput" placeholder="#E1789" onChange={handleInput} name='codenv'/>
+            <input type="text" className="form-control" id="formControlInput" placeholder="CE1789" onChange={handleInput} name='codenv'/>
             <label htmlfor="formControlInput" className="form-label mt-3">Telefono contacto del cliente</label>
             <input type="number" className="form-control" id="formControlInput" placeholder="Telefono Cliente" onChange={handleInput} name='telclient'/>
         </div>

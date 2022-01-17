@@ -35,7 +35,7 @@ export const Repartidor = () =>{
                                             <h3 className="">{res.codenv}</h3>
                                         </div>
                                         <div className="col-6">
-                                            <Link to='' className='btn btn-warning'>Ver Mas</Link>
+                                            <Link to={`/repartidor/mas/${res.codenv}`} className='btn btn-warning'>Ver Mas</Link>
                                         </div>
                                     </div>
                                 </div>

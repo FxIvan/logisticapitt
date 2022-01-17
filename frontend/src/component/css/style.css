@@ -21,4 +21,42 @@
         border-radius: 0.8rem;
         background-color: #5f8d2b;
     }
+    .vermas-label label{
+        padding: 1rem;
+        border: 2px solid black;
+        width: 50%;
+        text-align: center;
+        border-radius: 0.5rem;
+    }
+    .link-principal{
+        margin-bottom: 3rem;
+    }
+    .link-principal a{
+        text-decoration: none;    
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 1rem;
+        background-color: #47dd21;
+        color: black;
+    }
+    .link-sucursal a{
+        text-decoration: none;    
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 1rem;
+        background-color: #dd6c21;
+        color: black;
+    }
+    .link-update a{
+        text-decoration: none;    
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 1rem;
+        background-color: #e9e510;
+        color: black;
+    }
+    .titulo-navbar h1 a{
+        text-decoration: none;
+        color: #ca5fca;
+    }
 }

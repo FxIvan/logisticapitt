@@ -33,8 +33,8 @@ export const Update = () =>{
 
     const enviarDato = async() =>{
 
-        if(form.codenv.search('#')){
-            if(form.codenv.indexOf('#') === 1){
+        if(form.codenv.search('C')){
+            if(form.codenv.indexOf('C') === 1){
                 setCodenv(true)
                 return
             }
@@ -64,8 +64,8 @@ export const Update = () =>{
                 <label htmlFor='formControlInput' className="form-label">Fecha de emision</label>
                 <input type="date" className="form-control" id="formControlInput" placeholder="dd/mm/yy" onChange={handleInput} name='emision'/>
                 <label htmlfor="formControlInput" className="form-label">Codigo de Envio</label>
-                <input type="text" className="form-control" id="formControlInput" placeholder="#E1789" onChange={handleInput} name='codenv' required/>
-                <p className='text-danger'>{codenv ? 'debe incluir # al principio o falta #' : 'obligatorio'}</p>
+                <input type="text" className="form-control" id="formControlInput" placeholder="CE1789" onChange={handleInput} name='codenv' required/>
+                <p className='text-danger'>{codenv ? 'debe incluir C al principio o falta C' : 'obligatorio'}</p>
                 <label htmlfor="formControlInput" className="form-label">Telefono contacto del cliente</label>
                 <input type="number" className="form-control" id="formControlInput" placeholder="Telefono Cliente" onChange={handleInput} name='telclient'/>
             </div>
@@ -101,7 +101,7 @@ export const Update = () =>{
             </div>
             <div className='container'>
                 <label htmlfor="formControlInput" className="form-label">Repartidor a ASIGNAR</label>
-                <input type="text" className="form-control" id="formControlInput" placeholder="#D42727117C" name='repartidor' onChange={handleInput}/>
+                <input type="text" className="form-control" id="formControlInput" placeholder="D42727117C" name='repartidor' onChange={handleInput}/>
                 <p className='text-danger'>{repartidor ? "debe contener 9 Digitos":'obligatorio'}</p>
                 <p className='text-info'>Debe incluir la siguiente estructura <br/> D-DNI-EMPRESA</p>
             </div>

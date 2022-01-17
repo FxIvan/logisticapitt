@@ -20,5 +20,16 @@ router.route('/:repartidor')
     })
 })
 
+router.route('/mas/:vermas')
+.get(async(req,res)=>{
+    await datosEnvios.findOne({codenv:`${req.params.vermas}`})
+    .then(resp=>{
+        res.json(resp)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+})
+
 
 module.exports = router
